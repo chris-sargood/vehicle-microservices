@@ -1,0 +1,14 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CProjects_005Cvehicle_002Dmicroservices_005Cservices_005CVehicleEventContracts_005CVehicleEventContracts_002Esln/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CProjects_005Cvehicle_002Dmicroservices_005Cservices_005CVehicleEventContracts_005CVehicleEventContracts_005Cbin_005CDebug_005Cnetstandard2_002E1_005CVehicleEventContracts_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a966a3dc_002D1d93_002D42d9_002D9e68_002D7c693f061188/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Get_ExceptionThrown_500Returned" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::E60DD049-BB32-4762-B680-4814DB7D06E1::net6.0::VehiclesApi.Tests.Controller.VehicleControllerTests.Get_ExceptionThrown_500Returned&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::E60DD049-BB32-4762-B680-4814DB7D06E1::net6.0::VehiclesApi.Tests.Controller.VehicleControllerTests.Get_NullResultFromRepo_40Returned&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::E60DD049-BB32-4762-B680-4814DB7D06E1::net6.0::VehiclesApi.Tests.Controller.VehicleControllerTests.Get_VehicleFound_200Returned&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::E60DD049-BB32-4762-B680-4814DB7D06E1::net6.0::VehiclesApi.Tests.Controller.VehicleControllerTests.Post_ModelNotValid_400Returned&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::E60DD049-BB32-4762-B680-4814DB7D06E1::net6.0::VehiclesApi.Tests.Controller.VehicleControllerTests.Post_ExceptionThrown_400Returned&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::E60DD049-BB32-4762-B680-4814DB7D06E1::net6.0::VehiclesApi.Tests.Controller.VehicleControllerTests.Post_VehicleAdded_201Returned&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::E60DD049-BB32-4762-B680-4814DB7D06E1::net6.0::VehiclesApi.Tests.Controller.VehicleControllerTests.Post_VehicleAdded_EventPublished&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

@@ -1,0 +1,91 @@
+version: "3.8"
+services:
+
+  vehicles-api:
+    build:
+      context: ./services/VehiclesApi/src/
+    restart: on-failure
+    ports:
+      - "45478:80"
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=vehicles-api-sql-server-db,1433;Database=Vehicles;User Id=SA;Password=super-secret-123;Encrypt=False;
+      - RabbitMq__Host=rabbitmq
+
+  vehicles-search-consumer:
+    build:
+      context: ./services/VehiclesSearchConsumer/src/
+    restart: on-failure
+    environment:
+      - ElasticSearch__url=http://vehicles-search-api-elasticsearch:9200
+      - RabbitMq__Host=rabbitmq
+    depends_on:
+      vehicles-search-api-elasticsearch:
+        condition: service_healthy
+
+  vehicles-search-api:
+    build:
+      context: ./services/VehiclesSearchapi/src/
+    restart: on-failure
+    ports:
+      - "8748:80"
+    environment:
+      - ElasticSearch__url=http://vehicles-search-api-elasticsearch:9200
+    depends_on:
+      vehicles-search-api-elasticsearch:
+        condition: service_healthy
+
+  vehicles-api-sql-server-db:
+    container_name: vehicles-api-sql-server-db
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "super-secret-123"
+      ACCEPT_EULA: "Y"
+
+  vehicles-search-api-elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.5.1
+    container_name: vehicles-search-api-elasticsearch
+    environment:
+      - xpack.security.enabled=false
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: 1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    cap_add:
+      - IPC_LOCK
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+      - 9300:9300
+    healthcheck:
+        test: "curl -f localhost:9200"
+        interval: 5s
+        timeout: 5s
+        retries: 20
+
+  kibana:
+    container_name: kibana
+    image: docker.elastic.co/kibana/kibana:8.5.1
+    environment:
+      - ELASTICSEARCH_HOSTS=http://vehicles-search-api-elasticsearch:9200
+    ports:
+      - 5601:5601
+
+  rabbitmq:
+    image: masstransit/rabbitmq
+    container_name: 'rabbitmq'
+    ports:
+        - 5672:5672
+        - 15672:15672
+        
+volumes:
+  elasticsearch-data:
+    driver: local

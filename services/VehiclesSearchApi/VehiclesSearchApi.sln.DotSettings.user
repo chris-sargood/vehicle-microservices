@@ -1,0 +1,7 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3064fabf_002D0f21_002D4f8c_002D97e4_002D785364885f7a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Get_ModelNotValid_400Returned" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::8234A457-EFDC-46CC-B07E-77FF1D05E2B3::net6.0::VehicleSearchApi.Tests.Controllers.VehicleSearchControllerTests.Get_ModelNotValid_400Returned&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::8234A457-EFDC-46CC-B07E-77FF1D05E2B3::net6.0::VehicleSearchApi.Tests.Controllers.VehicleSearchControllerTests.Get_ExceptionThrown_500Returned&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
